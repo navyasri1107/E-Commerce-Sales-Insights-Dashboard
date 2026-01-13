@@ -1,8 +1,9 @@
+const API_BASE_URL = "https://e-commerce-backend-i8ck.onrender.com";
 let salesByMonthChart, topProductsChart, topCategoriesChart;
 
 // Function to load KPIs
 function loadKPIs(startDate = '', endDate = '') {
-    fetch(`http://127.0.0.1:5000/api/filter_sales?start_date=${startDate}&end_date=${endDate}`)
+    fetch(`${API_BASE_URL}/api/filter_sales?start_date=${startDate}&end_date=${endDate}`)
         .then(res => res.json())
         .then(data => {
             document.getElementById('total-sales').innerText = "Total Sales: ₹ " + data.total_sales.toLocaleString();
@@ -15,7 +16,7 @@ function loadKPIs(startDate = '', endDate = '') {
 
 // Function to load Sales by Month chart
 function loadSalesByMonth(startDate = '', endDate = '') {
-    fetch(`http://127.0.0.1:5000/api/sales_by_month?start_date=${startDate}&end_date=${endDate}`)
+    fetch(`${API_BASE_URL}/api/sales_by_month?start_date=${startDate}&end_date=${endDate}`)
         .then(res => res.json())
         .then(data => {
             const ctx = document.getElementById('salesByMonthChart').getContext('2d');
@@ -98,7 +99,7 @@ function loadSalesByMonth(startDate = '', endDate = '') {
 
 // Function to load Top Products chart
 function loadTopProducts(startDate = '', endDate = '') {
-    fetch(`http://127.0.0.1:5000/api/top_products?start_date=${startDate}&end_date=${endDate}`)
+    fetch(`${API_BASE_URL}/api/top_products?start_date=${startDate}&end_date=${endDate}`)
         .then(res => res.json())
         .then(data => {
             const ctx = document.getElementById('topProductsChart').getContext('2d');
@@ -170,7 +171,7 @@ function loadTopProducts(startDate = '', endDate = '') {
 
 // Function to load Top Categories chart
 function loadTopCategories(startDate = '', endDate = '') {
-    fetch(`http://127.0.0.1:5000/api/top_categories?start_date=${startDate}&end_date=${endDate}`)
+    fetch(`${API_BASE_URL}/api/top_categories?start_date=${startDate}&end_date=${endDate}`)
         .then(res => res.json())
         .then(data => {
             const ctx = document.getElementById('topCategoriesChart').getContext('2d');
@@ -228,6 +229,7 @@ document.getElementById('download-csv').addEventListener('click', () => {
     const endDate = document.getElementById('end-date').value;
 
     // Open the CSV download in a new browser tab
-    const url = `http://127.0.0.1:5000/api/generate_csv?start_date=${startDate}&end_date=${endDate}`;
+    const url = `${API_BASE_URL}/api/generate_csv?start_date=${startDate}&end_date=${endDate}`;
     window.open(url, '_blank');
 });
+
