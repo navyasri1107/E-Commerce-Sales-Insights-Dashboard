@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Sales Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>E-Commerce Sales Insights Dashboard</h1>
+
+    <!-- KPI Cards -->
+    <div class="kpi-container">
+        <div class="kpi-card" id="total-sales">Total Sales: </div>
+        <div class="kpi-card" id="total-orders">Total Orders: </div>
+        <div class="kpi-card" id="avg-order-value">Average Order Value: </div>
+        <div class="kpi-card" id="unique-customers">Unique Customers: </div>
+    </div>
+
+    
+<div class="charts-wrapper">
+
+<div class="date-filter">
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date">
+    
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date">
+    
+    <button id="filter-btn">Filter</button>
+    <button id="download-csv">Download CSV</button>
+    
+</div>
+
+    <!-- Charts -->
+     <div class="chart-row">
+        
+     <canvas id="salesByMonthChart" width="400" height="300"></canvas>
+     <canvas id="topProductsChart" width="400" height="300"></canvas>
+     <div class="donut-chart-container" style="text-align: center;">
+        <div class="chart-title">Top Categories by Sales</div>
+    <canvas id="topCategoriesChart" width="350" height="200"></canvas>
+
+</div>
+
+     </div>
+     
+
+
+
+     </div>
+    <script src="script.js"></script>
+</body>
+</html>
