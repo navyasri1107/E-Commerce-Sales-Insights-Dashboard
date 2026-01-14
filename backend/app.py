@@ -112,11 +112,29 @@ def sales_by_month():
 # Top products endpoint
 @app.route('/api/top_products')
 def top_products():
-    top = df.groupby('product_id')['total_price'].sum().sort_values(ascending=False).head(10)
+    start_date = request.args.get('start_date')
+    end_date = request.args.get('end_date')
+
+    filtered_df = df.copy()
+
+    if start_date:
+        filtered_df = filtered_df[filtered_df['order_date'] >= start_date]
+    if end_date:
+        filtered_df = filtered_df[filtered_df['order_date'] <= end_date]
+
+    top = (
+        filtered_df
+        .groupby('product_id')['total_price']
+        .sum()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+
     return jsonify({
         "labels": top.index.tolist(),
         "values": top.values.tolist()
     })
+
 
 # Top categories endpoint
 @app.route('/api/top_categories')
@@ -129,4 +147,5 @@ def top_categories():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.1', port=5000)
+
 
