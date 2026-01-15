@@ -8,6 +8,13 @@ It helps management and stakeholders analyze sales performance using interactive
 This project simulates a real-world Business Intelligence (BI) workflow, covering data analysis, backend API development, frontend visualization, and deployment.
 
 ---
+##  Live Deployment
+
+- **Frontend (GitHub Pages):**  
+  https://navyasri1107.github.io/E-Commerce-Sales-Insights-Dashboard/
+
+- **Backend (Render):**  
+  https://e-commerce-backend-i8ck.onrender.com
 
 ##  Key Features
 
@@ -33,15 +40,19 @@ This project simulates a real-world Business Intelligence (BI) workflow, coverin
   * Download filtered sales data as a CSV file
 
 ---
+## Project Objectives
 
-## Skills Demonstrated
+Analyze e-commerce sales data efficiently
 
-* Data Cleaning & Analysis using Pandas
-* Backend API development with Flask
-* REST API integration with frontend
-* Data visualization using Chart.js
-* UI/UX dashboard design with HTML & CSS
-* Version control and deployment using Git & GitHub
+Display key business KPIs clearly
+
+Visualize trends, products, and category performance
+
+Enable date-range filtering for analysis
+
+Export filtered data as CSV reports
+
+Build a deployable full-stack analytics project
 
 ##  Technologies Used
 
